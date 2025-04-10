@@ -8,8 +8,6 @@ An Appwrite Cloud Function that automatically generates engaging descriptions fo
 - 🔍 Incorporates real-world information through Google Search
 - ⚡ Quick and concise descriptions (under 250 characters)
 - 📚 Works with any comic book title
-- 🎨 Supports reading status tracking
-- ⭐ Handles rating information
 
 ## 🛠️ Setup
 
