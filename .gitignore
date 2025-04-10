@@ -1,0 +1,21 @@
+# provide me a complete gitignore file for a nodejs project
+# Logs
+logs    
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+*.node_modules
+node_modules
+node_modules/**/node_modules
+
+
+
