@@ -118,11 +118,10 @@ module.exports = async function ({ req, res, log, error: logError }) {
       Create an informative and appealing description that includes real details from the search results if relevant.
       Focus on being interesting and inviting while maintaining accuracy.`;
     } else {
-      prompt = `Generate a brief, engaging description (under 250 characters) for a comic book.
+      prompt = `Generate a brief, engaging description (under 1000 characters) for a comic book.
       Comic Details:
       Title: ${title}
-      Status: ${status}
-      ${rating > 0 ? `Rating: ${rating}/5` : ""}
+      }
       
       Create an informative and appealing description focused on the comic's title.
       Focus on being interesting and inviting.`;
