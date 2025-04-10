@@ -37,8 +37,6 @@ The function expects a JSON payload with the following structure:
 ```json
 {
   "title": "Comic Title",
-  "status": "read" | "to-read",
-  "rating": 0-5 (optional)
 }
 ```
 
@@ -74,7 +72,7 @@ Output:
 ```json
 {
   "success": true,
-  "description": "Frank Miller's groundbreaking origin story redefines Batman's first year as Gotham's guardian. A gritty, noir masterpiece that shaped the Dark Knight's legend. ⭐⭐⭐⭐⭐"
+  "description": "Frank Miller's groundbreaking origin story redefines Batman's first year as Gotham's guardian. A gritty, noir masterpiece that shaped the Dark Knight's legend."
 }
 ```
 
