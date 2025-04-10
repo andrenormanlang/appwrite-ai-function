@@ -1,0 +1,143 @@
+{
+  "projectId": "67f6973b002c893af4b4",
+  "projectName": "comics_shelf_react_natives",
+  "settings": {
+    "services": {
+      "account": true,
+      "avatars": true,
+      "databases": true,
+      "locale": true,
+      "health": true,
+      "storage": true,
+      "teams": true,
+      "users": true,
+      "functions": true,
+      "graphql": true,
+      "messaging": true
+    },
+    "auth": {
+      "methods": {
+        "jwt": true,
+        "phone": true,
+        "invites": true,
+        "anonymous": true,
+        "email-otp": true,
+        "magic-url": true,
+        "email-password": true
+      },
+      "security": {
+        "duration": 31536000,
+        "limit": 0,
+        "sessionsLimit": 10,
+        "passwordHistory": 0,
+        "passwordDictionary": false,
+        "personalDataCheck": false,
+        "sessionAlerts": false,
+        "mockNumbers": []
+      }
+    }
+  },
+  "databases": [
+    {
+      "$id": "67f697f500116cbcb73f",
+      "name": "comics_db",
+      "enabled": true
+    }
+  ],
+  "collections": [
+    {
+      "$id": "67f697fd0003a6d40f18",
+      "$permissions": [
+        "create(\"any\")",
+        "read(\"any\")",
+        "update(\"any\")",
+        "delete(\"any\")"
+      ],
+      "databaseId": "67f697f500116cbcb73f",
+      "name": "comics",
+      "enabled": true,
+      "documentSecurity": false,
+      "attributes": [
+        {
+          "key": "title",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 30,
+          "default": null
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 25,
+          "default": null
+        },
+        {
+          "key": "rating",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": 0,
+          "max": 5,
+          "default": null
+        },
+        {
+          "key": "coverImage",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 2048,
+          "default": null
+        },
+        {
+          "key": "createdAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "updatedAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "description",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 2048,
+          "default": null
+        }
+      ],
+      "indexes": []
+    }
+  ],
+  "functions": [
+    {
+      "$id": "comics_description_ai",
+      "name": "comics_ai_description",
+      "runtime": "node-18.0",
+      "specification": "s-0.5vcpu-512mb",
+      "execute": ["any"],
+      "events": [
+        "databases.*.collections.comics.documents.*.create",
+        "databases.*.collections.comics.documents.*.update"
+      ],
+      "scopes": ["users.read"],
+      "schedule": "",
+      "timeout": 15,
+      "enabled": true,
+      "logging": true,
+      "entrypoint": "index.js",
+      "commands": "npm install",
+      "path": "."
+    }
+  ]
+}
